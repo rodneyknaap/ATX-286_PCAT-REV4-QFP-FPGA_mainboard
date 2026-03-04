@@ -1,5 +1,7 @@
 # 286 PC/AT QFP FPGA ATX mainboard revision 4  
-ATX 286 PC AT REV4 QFP FPGA mainboard design based on original IBM 5170 PC/AT technology  
+![A picture of the mainboard design in progress](REV_4_QFP_MAINBOARD_IN_PROGRESS_002.png)  
+
+ATX 286 PC/AT REV4 QFP FPGA mainboard design based on original IBM 5170 PC/AT technology  
 
 This project is Revision 4 of my open source 286 AT ATX PC mainboard design project.
 This is the first actual system design undergoing testing and debugging phases using FPGA technology.
