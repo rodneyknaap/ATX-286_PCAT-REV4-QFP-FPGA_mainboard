@@ -91,7 +91,7 @@ More details will be updated here shortly,
 
 A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
 
-A few words for people who may want to help me with this project:
+# A few words for people who may want to help me with this project:
 - I am not looking for designers that want to copy-paste and then rework my layouts
 - If your intention is to really help the project, please observe some simple courtesy and respect for my years of hard work and heavy lifting that I have put in to reach this point in the project, so any commentary bashing my work or deminishing the project will be from then on be ignored completely in the future. Bashing people is not positive and not helping.
   
