@@ -91,6 +91,19 @@ More details will be updated here shortly,
 
 A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
 
+A few words for people who may want to help me with this project:
+- I am not looking for designers that want to copy-paste and then rework my layouts
+- If your intention is to really help the project, please observe some simple courtesy and respect for my years of hard work and heavy lifting that I have put in to reach this point in the project, so any commentary bashing my work or deminishing the project will be from then on be ignored completely in the future. Bashing people is not positive and not helping.
+  
+- the purpose of my project is to preserve historic technology by doing a best effort attempt to recreate closed designs which would otherwise be doomed to eventually become lost in time, such as period chipsets and most notably the IBM 5170 and 5162 technology.
+- a secondary purpose is to achieve higher clock speeds and gain more efficiency from the 286 CPU, and reaching a more "clean" type of design, ie. more integration and less loose controller ICs, etc, resulting in a cleaner look of the board.
+
+- I am a FPGA design beginner, and my intention is only to use the technology to aid the project, so mistakes will be made and I will work on those to correct them. Also improvisation and using instinctive design helps to gain more insight to discover the limits and pressure points of technology. If not explored and experienced, we can't learn these things in my opinion.
+
+- I have literally zero funds to finance this project so anyone who wants to help me in any way please reach out.
+
+Also if someone in the PC industry is still around after so many years have passed, and pleased to find my work which is also meant to attribute the importance of their technology (one can hope) please reach out, I would love to hear about it and exchange experiences.
+
 kind regards,
 
 Rodney
