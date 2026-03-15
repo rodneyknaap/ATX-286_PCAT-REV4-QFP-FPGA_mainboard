@@ -1,5 +1,7 @@
 # 286 PC/AT QFP FPGA ATX mainboard revision 4  
-![A picture of the mainboard design in progress](REV_4_QFP_MAINBOARD_IN_PROGRESS_002.png)  
+![A picture of the mainboard design front side](REV_4_QFP_MAINBOARD_FRONT.png)  
+
+![A picture of the mainboard design back side](REV_4_QFP_MAINBOARD_BACK.png)
 
 ATX 286 PC/AT REV4 QFP FPGA mainboard design based on original IBM 5170 PC/AT technology  
 
@@ -9,10 +11,11 @@ This is the first actual system design undergoing testing and debugging phases u
 As with the first and third revisions, this design is based on the original IBM 5170 PC/AT concept.
 I am trying to put an effort into this project to attempt to maintain as much of the original PC/AT technology as possible.
 In REV1 and REV3D I am aware of the fact that I have employed partial asynchronous design.
-This is intentional because I have not been able yet to use a synchronous design in the system controller CPLDs.
+This is intentional for the time being because I have not been able yet to use a synchronous design in the system controller CPLDs.
 That is not to say that this may not be possible in the future, however development and testing with a CPLD is severely limited in numbers of available registers and output enable functions.
-So far, this has prevented me from getting to a functional design using a synchronous design method.
-During system control development of REV1, I have recreated each system control signal component step by step and I have tested many types of circuits, both clocked and asynchronously set/reset mechanisms. So far, certain design areas have only operated successfully and stably based on partial asynchronous circuits. Possibly with a higher clock speed we could achieve the necessary timing however I am sceptical regarding whether a CPLD can be able provide enough register capacity to achieve the necessary timing. I plan to do more attempts with faster clock input on the CPLDs in the future. I am not sure yet what level of higher clock speed would be needed to be able to catch all timing moments involved in various system control areas.
+So far, this has prevented me from getting to a functional design using a synchronous design method.  
+
+During system control development of REV1, I have recreated each system control signal component step by step and I have tested many types of circuits, both clocked and asynchronously set/reset mechanisms. So far, certain design areas have only ever operated successfully and stably based on partial asynchronous circuits. Possibly with a higher clock speed granularity we can achieve the necessary timing with the CPLDs however I am sceptical regarding whether a CPLD can be able provide enough register capacity to achieve the necessary control timing to allow a 286 to correctly terminate the cycles. I plan to do more attempts with faster clock input on the CPLDs in the future. I am not sure yet what level of higher clock speed would be needed to be able to catch all timing moments involved in various system control areas.  
 
 Now that we are going to use an FPGA here in the REV4 stage, it's my hope that we can create a fully new model which doesn't depend on any asynchronous setting and resetting of registers in the design.
 A higher clock speed and a sufficient number of registers will help to realize this where there will be more subtle timing control possible thanks to the higher clock "resolution".
@@ -89,7 +92,7 @@ So this ISA card will also contain the system ROM using a single 8 bit mode 1 me
 
 More details will be updated here shortly,
 
-A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
+## A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
 
 # A few words for people who may want to help me with this project:
 - I am not looking for designers that want to copy-paste and then rework my layouts
@@ -102,8 +105,31 @@ A big thank you goes out to everyone who has expressed their appreciation and su
 
 - I have literally zero funds to finance this project so anyone who wants to help me in any way please reach out.
 
-Also if someone in the PC industry is still around after so many years have passed, and pleased to find my work which is also meant to attribute the importance of their technology (one can hope) please reach out, I would love to hear about it and exchange experiences.
+Also if someone in the PC industry is still around after so many years have passed, and pleased to find my work which is also meant to attribute the importance of their technology (one can hope) please reach out, I would love to hear about it and exchange experiences.  
+
+# PCB layout is now finished (15-3-2026)  
+I have prepared the PCB layout for manufacturing, the gerber files and a few PDF documents are now uploaded in the project directory.  
+
+A few notes regarding the PCB:  
+- there are several options for using USB devices for mouse and keyboard.
+Generally I suggest to use a AT keyboard on the DIN connector(or a PS/2 keyboard with adapter cable) and the USB mouse to serial solution for mouse control. This option is marked in blue color on the options picture so then these components can be used.
+Alternatively, in this project I have added the components for those potential builders who would prefer a USB to PS/2 solution which enables controlling the system with USB keyboard and USB mouse. Please note: this option is as of yet untested and potential builders must examine the schematic for themselves to make sure that the PS2X2PICO solution as found here on GitHub is correctly interfaced. Details of PS2X2PICO here: https://github.com/No0ne/ps2x2pico, it's a project of user No0ne on GitHub, please see the details there. Just program the pico and insert it into the designated header. General component selection is marked in pink in the picture just to get you started.
+Mouse and keyboard are interfaced using the same level shifter ICs as used for all other IO to the FPGA. If the PICO output side is also 3.3V level that should theoretically also be fine using the level shifter IC as far as I understand the IC. I have studied the datasheet and apparently it's compatible with a whole range of logic voltage levels on either side.
+
+- the design is in prototype phase. Ordering PCBs and building the system is at the builder's own responsibility to make this work correctly. You are free to contact me however I promise no support, though I am open for reading your messages at least which is welcome as long as in a civilized tone.
+- I will publish a quartus project for programming the FPGA and CPLD as soon as I am satisfied with a certain level of stability that makes the system sufficiently reliable.  
+
+# Synchronous or not synchronous?  
+I have been advised that FPGA designs must always run synchronous, which makes sense when you have sufficient programmable logic resources available to support such a model.
+In the CPLD stages (REV1 and REV3D), so far, I have not found a sufficiently functional model to support a more synchronous design, so for now the REV3D system uses asynchronous programming in the system controller, which is running 100% reliable and stable in the published quartus projects for the REV3D. However achieved, the design is fully functional and in REV3D it's a whole lot more stable and fast than REV1. After revising the system control in this project, I am going to take a careful look at the logic to see whether that might be (partially) supported in the REV3D system controller. Testing, debugging and development with the FPGA may be able to provide a path toward new solutions that could be applied to REV3D if the CPLDs can make some form or derived design happen.  
+
+## Debugging work on the REV4 QFP FPGA stage  
+I am going to start development work on the FPGA where the initial goal will be to get the 286 CPU to be able to initialize and show POST diagnostic codes or beep sequences. These could then possibly provide clues to continue the debugging process. There are a lot of factors involved to be able to achieve this level of functionality. To a certain degree the HDL core AT controller equivalents will be needed to provide beep sounds and get the system through the POST sequence far enough that the CPU will be able to initialize the VGA BIOS and start to display on the screen. Part of CPU operations will depend on the asynchronous system control which may or may not be functional up to certain levels, this area of the design will become apparent as soon as I am able to test with the current designs developed up to the REV3D stage. It's not ideal and we will need to see how far this is able to function. Hopefully up to a certain level so we may continue to apply more and more synchronous areas in the system control.
+
+I am currently working on a few other smaller PCBs in order to save on shipping costs for those.
+As soon as boards are made and arrived by post I will update here.
 
 kind regards,
 
 Rodney
+last update: 15-3-2026
