@@ -116,7 +116,7 @@ I have literally zero funds to finance this project so if anyone wants to help m
 Also if someone in the PC industry is still around after so many years have passed, and pleased to find my work which is also meant to attribute the importance of their technology (one can hope) please reach out, I would love to hear about it and exchange experiences.  
 
 # Micro ATX form factor PCB layout is now finished (21-6-2026)  
-I have prepared the PCB layout for manufacturing, the gerber files and a few PDF documents will be updated in the project directory shortly.  
+The gerber files and a few PDF support documents are available in the project directory.  
 
 A few further notes regarding the PCB:  
 - USB or AT (PS/2) keyboard and mouse are both possible, please refer to the jumper block near the keyboard connector which enables to connect the keyboard and mouse pins from the FPGA to the back connectors, or connect these with the PS2X2PICO for which there is a footprint on the mainboard. Please refer to the project by NoOne here on GitHub, and thanks go out to his great work making it possible to convert the PS/2 mouse and keyboard to USB.
