@@ -22,7 +22,7 @@ In addition, the clock shapes from the memory blocks will serve as the dynamic c
 The bits in the memory blocks will allow us to drive different cycle scenarios of the 286 CPU dynamically depending on early decoding in different parts of the 286 cycles.
 Or at least, that's the plan!
 
-I have started the FPGA work on another design repository using a large 672 pin Cyclone II BGA FPGA, however this QFP stage is now first going to be developed. I first wanted to test a few design aspects such as the flash configuration of the FPGA and core AT controller replacement designs on a test board, and while building up that design, I added and compiled in more and more functionality until I started to realize that I would actually probably be able to create a fully functional PC/AT design by reducing the design complexity in the following ways:  
+I have started the FPGA work on another design repository using a large 672 pin Cyclone II BGA FPGA, however this QFP stage is now first going to be developed. I first wanted to test a few design aspects such as the serial flash based configuration using AS mode of the FPGA and core AT controller replacement designs on a test board, and while building up that design, I added and compiled in more and more functionality until I started to realize that I would actually probably be able to create a fully functional PC/AT design by reducing the design complexity in the following ways:  
 - we don't feature a separate memory address and data bus  
 - we will use the 286 high address lines A17-A22 to drive the LA17-LA22 lines on the ISA slot during CPU cycles. However the FPGA would theoretically still be able to drive these lines were it necessary for example during DMA, because the CPU will be in tri-state, allowing the FPGA to output these lines. There is no DMA to VGA memory and otherwise there is no target RAM present on the slots for DMA. So for this particular system we can ignore outputting these lines for DMA purposes while the CPU is on hold because DMA will be taking place on onboard SRAM which are decoded inside the FPGA. The 286 will drive the LA lines to write to VGA RAM or read the VGA BIOS ROM, which is decoded by the VGA controller chip. In a later stage we could test with a bus master because we will interpret the /MASTER input from the ISA slots.  
 - we will reduce DMA to only channel 2(floppy drive controller) and channel 1(sound card)  
@@ -52,7 +52,9 @@ In the smaller QFP Cyclone II FPGA we will have enough logic capacity to replace
 In addition we will attempt to create EMS memory which operates identically to the REV3D EMS by manipulating the system bus.  
 The remaining logic capacity will hopefully support developing the new system control model.  
 
-The project will consist of a Micro ATX form factor mainboard, there are 6 SRAMs on the mainboard which can be used used for XMS and EMS memory intended to support running RealDOOM with drivers developed by sqpat.  
+The project will consist of a Micro ATX form factor mainboard, there are 6 SRAMs on the mainboard which can be used used for XMS and EMS memory intended to support running RealDOOM with drivers developed by sqpat:  
+https://github.com/sqpat/RealDOOM  
+
 The system ROM is a single 8 bit mode chip on the lower system data bus.  
 
 The mainboard supports the 80286 16 bit CPU, system bus driving is completely done by the FPGA via bus switch ICs.  
