@@ -91,7 +91,7 @@ When building this project, the builder assumes personal responsibility for trou
 These disclaimers and conditions may seem unfriendly but remember that they are by no means meant to reflect on you as a reader personally or individually, just imagine that all possible people and unwise use and situations still need to be covered since this project is openly published on the internet, which means any person on the planet is able to find the information, thus also the comments are meant for every possible person who wants to use the information. I am reasonably assuming that 99% of people will be civilized enough to observe respect and common sense.
 
 # Revision 4 design of a PC/AT mainboard based on QFP FPGA technology  
-For background information and previous acknowledgements, please first see the REV1 and REV3D design repository, as well as the REV4 large BGA design repository. 
+For background information and previous acknowledgements, please first see the REV1 and REV3E design repository, as well as the REV4 large BGA design repository. 
 Please note: the REV4 PC/AT BGA FPGA system design using the 672 pin FPGA will continue after this system has been built and debugged/developed.
 
 The information provided here is purely meant to describe the differences and changes in the REV4 QFP FPGA PC/AT system design.
@@ -107,26 +107,31 @@ The PCB layout is now finished.
 
 ## A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
 
-# A few words for people who may want to help me with this project:  
+# A few words for people who may want to get in touch or respond to this project:  
 I must keep a clear mind and concentration on the work and not get distracted with irrelevant messaging so I will be discerning between how people approach their communication towards me and the project in general.  
 - sincerely helpful and respectful tips and advice with normal wording are always welcome and much appreciated, and I will be glad to engage in communication with everyone who observes this  
 - nitpicking, bashing and grandiose rants will not result in any replies or consideration of the content  
 
-The purpose of my project is to preserve historic technology by doing a best effort attempt to recreate closed designs which would otherwise be doomed to eventually become lost in time, such as period chipsets and most notably the IBM 5170 and 5162 technology.
-A secondary purpose is to achieve higher clock speeds and gain more efficiency from the 286 CPU, and reaching a more "clean" type of design, ie. more integration and less separate controller ICs, etc, in the system, resulting in a cleaner look of the board.
+The purpose of my project is to preserve historic technology by doing a best effort attempt to recreate closed designs which would otherwise be doomed to eventually become lost in time, such as following the concepts used in period chipsets and most notably preserving the IBM 5170 and 5162 technology which is at the basis of all AT PC technology that followed in the years after the IBM PC team created these systems.  
 
-I have literally zero funds to finance this project so if anyone wants to help me in any way please reach out.
+A secondary purpose besides preservation is to achieve higher clock speeds and gain more efficiency from the 286 CPU, and reaching a more "clean" type of design, ie. more integration and less separate controller ICs in the system, resulting in a cleaner look of the board and overall cleaner system.  
 
-Also if someone in the PC industry is still around after so many years have passed, and pleased to find my work which is also meant to attribute the importance of their technology (one can hope) please reach out, I would love to hear about it and exchange experiences.  
+I have literally zero funds to finance this project so if anyone wants to help me in any way please reach out.  
+
+Also if someone in the PC industry is still around after so many years have passed, and pleased to find my work which is also meant to attribute the importance of their technology (one can hope) please reach out, I would love to hear about it and exchange valuable experiences which will inspire me and all other retro PC enthusiasts. Your work mattered and we all hope for more detailed insider information from this era where internet forums were not established yet.  
 
 # Micro ATX form factor PCB layout is now finished (21-6-2026)  
 The gerber files and a few PDF support documents are available in the project directory.  
 
 A few further notes regarding the PCB:  
-- USB or AT (PS/2) keyboard and mouse are both possible, please refer to the jumper block near the keyboard connector which enables to connect the keyboard and mouse pins from the FPGA to the back connectors, or connect these with the PS2X2PICO for which there is a footprint on the mainboard. Please refer to the project by NoOne here on GitHub, and thanks go out to his great work making it possible to convert the PS/2 mouse and keyboard to USB.
-- USB to serial mouse conversion created by LimeProgramming is also included with a dedicated footprint for the RP2040 PICO which can be programmed with his project to connect a USB mouse or mouse receiver and connect as a serial mouse to the DOS driver or windows 3.1 support etc.
+- USB or AT (PS/2) keyboard and mouse are both possible, please refer to the jumper block near the keyboard connector which enables to either connect the keyboard and mouse pins from the FPGA to the back connectors, or to connect these with the PS2X2PICO for which there is a footprint on the mainboard. Please refer to the project by NoOne here on GitHub, and thanks go out to his great work making it possible to convert the PS/2 mouse and keyboard to USB:  
+https://github.com/No0ne/ps2x2pico  
+- USB to serial mouse conversion created by LimeProgramming is also included with a dedicated footprint for the RP2040 PICO which can be programmed with his project to connect a USB mouse or mouse receiver and connect as a serial mouse to the DOS driver or windows 3.1 support etc:  
+https://github.com/LimeProgramming/USB-serial-mouse-adapter  
 - Support for the PicoGUS by polpo as featured here on GitHub is also included here on the mainboard, with many thanks to polpo for all his hard work!
 Please note: the logic provided here is untested and unverified with the PicoGUS programmed RP2040 so no guarantees are given that this will work and please refrain from contacting polpo about my non standard implementation here on this board, instead please wait for my test results as an indication if and how well it can work. Particularly I will need to test PicoGUS IO compatibility with a faster clocked 286 CPU. Otherwise the DMA speeds are likely low enough.
+More details about polpos project which is always under development can be found on his GitHub page:  
+https://github.com/polpo/picogus  
 - the design is in prototype phase. Ordering PCBs and building the system is at the builder's own responsibility to make this work correctly. You are free to contact me however I promise no support, though I am open for reading your messages at least which is welcome as long as in a civilized tone.
 - I will publish a quartus project for programming the FPGA and CPLD as soon as I am satisfied with a certain level of stability that makes the system sufficiently reliable.  
 
