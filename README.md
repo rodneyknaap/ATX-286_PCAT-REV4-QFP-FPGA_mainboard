@@ -32,40 +32,40 @@ I have started the FPGA work on another design repository using a large 672 pin 
 - we will feature an external PLCC FDC and UART, the PLCC FDC also provides the FDC /DC status read port bit to the CPU.
 
 A 208 pin CPLD has been added to the design to provide: 
-- IO decoding
-- POST LED displays
-- more advanced status LED decoding to indicate system operation:
-  RESET active
-  CPU holding
-  CPU Memory cycle
-  CPU I/O cycle
-  CPU BIOS routines running
-  VGA access
-  CPU conventional memory access
-  CPU XMS memory access
-  DMA cycles
-- dual IDE ports
-- LPT port
-- clock division for the system timer and UART
+- IO decoding  
+- POST LED displays  
+- more advanced status LED decoding to indicate system operation:  
+  RESET active  
+  CPU holding  
+  CPU Memory cycle  
+  CPU I/O cycle  
+  CPU BIOS routines running  
+  VGA access  
+  CPU conventional memory access  
+  CPU XMS memory access  
+  DMA cycles  
+- dual IDE ports  
+- LPT port  
+- clock division for the system timer and UART  
 
-In the smaller QFP Cyclone II FPGA we will have enough logic capacity to replace all the core AT controller chips. (hopefully but so far it appears so)
-In addition we will attempt to create EMS memory which operates identically to the REV3D EMS by manipulating the system bus.
-The remaining logic capacity will hopefully support developing the new system control model.
+In the smaller QFP Cyclone II FPGA we will have enough logic capacity to replace all the core AT controller chips. (hopefully but so far it appears so)  
+In addition we will attempt to create EMS memory which operates identically to the REV3D EMS by manipulating the system bus.  
+The remaining logic capacity will hopefully support developing the new system control model.  
 
-The project will consist of a Micro ATX form factor mainboard, there are 6 SRAMs on the mainboard which can be used used for XMS and EMS memory intended to support running RealDOOM with drivers developed by sqpat.
-The system ROM is a single 8 bit mode chip on the lower system data bus.
+The project will consist of a Micro ATX form factor mainboard, there are 6 SRAMs on the mainboard which can be used used for XMS and EMS memory intended to support running RealDOOM with drivers developed by sqpat.  
+The system ROM is a single 8 bit mode chip on the lower system data bus.  
 
-The mainboard supports the 80286 16 bit CPU, system bus driving is completely done by the FPGA via bus switch ICs.
+The mainboard supports the 80286 16 bit CPU, system bus driving is completely done by the FPGA via bus switch ICs.  
 
-A Harris 286 rated at 20MHz or higher is recommended, the highest clock speed verified ones are known to be made in early 1990s years. 
-Basically for composing the core PC/AT system based on IBM 5170 technology all logic is now contained within the FPGA.
-In addition, we will integrate the core PC/AT controller chips in the FPGA:
-- the 8042 keyboard controller
-- the IRQ controllers
-- the DMACs
-- the RTC
-- the DMA page mapper chip
-- the system timer
+A Harris 286 rated at 20MHz or higher is recommended, the highest clock speed verified ones are known to be made in early 1990s years.  
+Basically for composing the core PC/AT system based on IBM 5170 technology all logic is now contained within the FPGA.  
+In addition, we will integrate the core PC/AT controller chips in the FPGA:  
+- the 8042 keyboard controller  
+- the IRQ controllers  
+- the DMACs  
+- the RTC  
+- the DMA page mapper chip  
+- the system timer  
 
 ## Purpose and permitted use, cautions for a potential builder of this design
 This project was created for historical purposes out of love for historical computing designs and for the purpose of enabling computing enthousiasts with a sufficient level of building and troubleshooting expertise to be able to experience the technology by building and troubleshooting the hardware described in this project. Due to the level of this project, it may be suitable as a project for students to get into. If there are any questions from teachers who like to teach about this technology I would be happy to answer them. It may be really interesting to analyse the elaborate and complex CPU timing and 8 bit to 16 bit data byte translation and DMA mechanisms in an educational setting.
