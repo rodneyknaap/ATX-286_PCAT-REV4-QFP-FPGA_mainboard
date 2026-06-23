@@ -15,14 +15,14 @@ Any asynchronous areas are for the time being fully intentional as they are beca
 Development and testing with a CPLD is severely limited in numbers of available registers and output enable functions.
 So far, this has prevented me from getting to a functional design using a fully synchronous design method, however a more synchronous version of the REV3 system controller has now been released by using a higher frequency clock input, the CPU then runs at 16MHz. Please refer to the REV3E repository for this quartus project.  
 
-Now that we are going to use an FPGA here in the REV4 stage, it's my hope that we can create a fully new model which doesn't depend on any asynchronous setting and resetting of registers in the design.
+Now that we are going to use an FPGA here in the REV4 stage, it's my hope that we can create a new system control model which doesn't depend on any asynchronous setting and resetting of registers in the design, or at least greatly reduce doing so in the areas that really matter to begin with.  
 A higher clock speed and a sufficient number of registers will help to realize this where there will be more subtle timing control possible thanks to the higher clock "resolution".
-In addition, I plan to use FPGA memory blocks to generate variable timing sequences and clock transition moments which will drive the same shift register outputs that result in a single system control model.
-In addition, the clock shapes from the memory blocks will serve as the dynamic clock basis for the 286 CPU.
-The bits in the memory blocks will allow us to drive different cycle scenarios of the 286 CPU dynamically depending on early decoding in different parts of the 286 cycles.
-Or at least, that's the plan!
+In addition, I plan to use the available FPGA memory blocks to generate variable timing where the clock transition moments are created in FPGA memory blocks. The bitstream from the selected memory block will then drive a single system of decoded shift register outputs that result in a single system control model. So the variation of the system control speeds will be created in the FPGA memory based clock shapes. In addition, the clock shapes from the memory blocks will serve as the dynamic clock basis for the 286 CPU to align it with system control timing.  
+The bits in the memory blocks will allow us to drive different cycle scenarios of the 286 CPU dynamically depending on early decoding in different parts of the 286 cycles. Or at least, that's the plan! So the clocking bitstreams will be initially identical until the cycle decoding outputs are established after which the bitstreams will diverge to different transition timing.  
 
-I have started the FPGA work on another design repository using a large 672 pin Cyclone II BGA FPGA, however this QFP stage is now first going to be developed. I first wanted to test a few design aspects such as the serial flash based configuration using AS mode of the FPGA and core AT controller replacement designs on a test board, and while building up that design, I added and compiled in more and more functionality until I started to realize that I would actually probably be able to create a fully functional PC/AT design by reducing the design complexity in the following ways:  
+# How this version of the FPGA iteration has evolved  
+I have started the FPGA work on another design repository using a large 672 pin Cyclone II BGA FPGA, however this QFP stage is now first going to be developed. I first wanted to test a few design aspects such as the serial flash based configuration using AS mode of the FPGA and core AT controller replacement designs on a test board, and while building up that design, I added and compiled in more and more functionality.   
+Eventually I realized that I would actually probably be able to create a fully functional PC/AT design using the 208 pin Cyclone II FPGA by reducing the design complexity in the following ways:  
 - we don't feature a separate memory address and data bus  
 - we will use the 286 high address lines A17-A22 to drive the LA17-LA22 lines on the ISA slot during CPU cycles. However the FPGA would theoretically still be able to drive these lines were it necessary for example during DMA, because the CPU will be in tri-state, allowing the FPGA to output these lines. There is no DMA to VGA memory and otherwise there is no target RAM present on the slots for DMA. So for this particular system we can ignore outputting these lines for DMA purposes while the CPU is on hold because DMA will be taking place on onboard SRAM which are decoded inside the FPGA. The 286 will drive the LA lines to write to VGA RAM or read the VGA BIOS ROM, which is decoded by the VGA controller chip. In a later stage we could test with a bus master because we will interpret the /MASTER input from the ISA slots.  
 - we will reduce DMA to only channel 2(floppy drive controller) and channel 1(sound card)  
@@ -31,7 +31,7 @@ I have started the FPGA work on another design repository using a large 672 pin 
 - the SRAM will be in 3.3V logic, directly attached on the FPGA side of the system bus, while the ISA slots and system ROM will be located on the 5V side of the system bus.
 - we will feature an external PLCC FDC and UART, the PLCC FDC also provides the FDC /DC status read port bit to the CPU.
 
-A 208 pin CPLD has been added to the design to provide: 
+To expand into a fully integrated PC/AT mainboard and being able to make do with less expansion cards on the slots, a 208 pin CPLD has been added to the design to provide:  
 - IO decoding  
 - POST LED displays  
 - more advanced status LED decoding to indicate system operation:  
@@ -48,9 +48,10 @@ A 208 pin CPLD has been added to the design to provide:
 - LPT port  
 - clock division for the system timer and UART  
 
-In the smaller QFP Cyclone II FPGA we will have enough logic capacity to replace all the core AT controller chips. (hopefully but so far it appears so)  
-In addition we will attempt to create EMS memory which operates identically to the REV3D EMS by manipulating the system bus.  
-The remaining logic capacity will hopefully support developing the new system control model.  
+In the smaller QFP Cyclone II FPGA we will have enough logic capacity to replace all the core AT controller chips. Hopefully this will work out, but so far it appears to be the case so that's the plan with this project.  
+
+In addition we will attempt to create EMS memory functionality which operates identically to the REV3E EMS by manipulating the system bus.  
+The remaining logic capacity will then hopefully support developing the new system control model.  
 
 The project will consist of a Micro ATX form factor mainboard, there are 6 SRAMs on the mainboard which can be used used for XMS and EMS memory intended to support running RealDOOM with drivers developed by sqpat:  
 https://github.com/sqpat/RealDOOM  
