@@ -108,8 +108,9 @@ The PCB layout is now finished.
 ## A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
 
 # A few words for people who may want to help me with this project:  
-- sincerely helpful and respectful tips and advice are always welcome and much appreciated  
-- nitpicking and bashing will not result in any replies  
+I must keep a clear mind and concentration on the work and not get distracted with irrelevant messaging so I will be discerning between how people approach their communication towards me and the project in general.  
+- sincerely helpful and respectful tips and advice with normal wording are always welcome and much appreciated, and I will be glad to engage in communication with everyone who observes this  
+- nitpicking, bashing and grandiose rants will not result in any replies or consideration of the content  
 
 The purpose of my project is to preserve historic technology by doing a best effort attempt to recreate closed designs which would otherwise be doomed to eventually become lost in time, such as period chipsets and most notably the IBM 5170 and 5162 technology.
 A secondary purpose is to achieve higher clock speeds and gain more efficiency from the 286 CPU, and reaching a more "clean" type of design, ie. more integration and less separate controller ICs, etc, in the system, resulting in a cleaner look of the board.
