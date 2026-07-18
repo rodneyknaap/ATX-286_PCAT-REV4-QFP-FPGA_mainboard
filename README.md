@@ -105,13 +105,17 @@ The EMS system is planned to be able to take control only of the upper 4MB SRAM 
 
 The PCB layout is now finished.
 
-## A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and on the VCF forum thread!
+## A big thank you goes out to everyone who has expressed their appreciation and support for my work, both here on GitHub and elswhere!  
 
-# A few words for people who may want to get in touch or respond to this project:  
-I must keep a clear mind and concentration on the work and not get distracted with irrelevant messaging so I will be discerning between how people approach their communication towards me and the project in general.  
-- sincerely helpful and respectful tips and advice with normal wording are always welcome and much appreciated, and I will be glad to engage in communication with everyone who observes this  
-- nitpicking, bashing and grandiose rants will not result in any replies or consideration of the content  
+# Special thanks go to GitHub users:  
+- htminuslab who developed various very useful HDL core AT controller projects which I will attempt to test and use for this project, for example:  
+https://github.com/htminuslab/HTL8237  
+- LimeProgramming who developed the excellent USB to serial mouse project:  
+https://github.com/LimeProgramming/USB-serial-mouse-adapter  
+- maniekx86 who kindly permitted me to use his HDL 8042 keyboard controller which he created for his project:  
+https://github.com/maniekx86/M8SBC-486  
 
+## Project goals  
 The purpose of my project is to preserve historic technology by doing a best effort attempt to recreate closed designs which would otherwise be doomed to eventually become lost in time, such as following the concepts used in period chipsets and most notably preserving the IBM 5170 and 5162 technology which is at the basis of all AT PC technology that followed in the years after the IBM PC team created these systems.  
 
 A secondary purpose besides preservation is to achieve higher clock speeds and gain more efficiency from the 286 CPU, and reaching a more "clean" type of design, ie. more integration and less separate controller ICs in the system, resulting in a cleaner look of the board and overall cleaner system.  
@@ -131,7 +135,7 @@ https://github.com/LimeProgramming/USB-serial-mouse-adapter
 - Support for the PicoGUS by polpo as featured here on GitHub is also included here on the mainboard, with many thanks to polpo for all his hard work!
 Please note: the logic provided here is untested and unverified with the PicoGUS programmed RP2040 so no guarantees are given that this will work and please refrain from contacting polpo about my non standard implementation here on this board, instead please wait for my test results as an indication if and how well it can work. Particularly I will need to test PicoGUS IO compatibility with a faster clocked 286 CPU. Otherwise the DMA speeds are likely low enough.
 More details about polpos project which is always under development can be found on his GitHub page:  
-https://github.com/polpo/picogus  
+https://github.com/polpo/picogus
 - the design is in prototype phase. Ordering PCBs and building the system is at the builder's own responsibility to make this work correctly. You are free to contact me however I promise no support, though I am open for reading your messages at least which is welcome as long as in a civilized tone.
 - I will publish a quartus project for programming the FPGA and CPLD as soon as I am satisfied with a certain level of stability that makes the system sufficiently reliable.  
 
@@ -148,11 +152,12 @@ From july 2026 I will only update my project blog on my own website and I will u
 So anyone who is interested is hereby invited to take a look at my website.
 I created a forum system there and if you like to join, feel free to send me an email and I will create a login for you so you can post subjects and reply to threads. 
 
-You can find my website in the repository link URL or via https://www.knaapic.nl  
+You can find my website in the repository link URL or via 
+[https://www.knaapic.nl/atx-286-at-rev4](https://knaapic.nl/atx-286-at-rev4/)  
 The menu "Historic computing" contains dedicated pages for the repository projects.
 A lot of information is the same as here but some details have been elaborated on my website.
 The forum link is: 
-https://knaapic.nl/community/   
+[https://knaapic.nl/community/](https://knaapic.nl/community/main-forum/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170)
 
 Thank you for your interest, I look forward to hearing from you!
 
@@ -160,4 +165,4 @@ Kind regards,
 
 Rodney
 
-Updated last on july 11th, 2026.
+Updated last on july 18th, 2026.
