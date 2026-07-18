@@ -152,12 +152,12 @@ From july 2026 I will only update my project blog on my own website and I will u
 So anyone who is interested is hereby invited to take a look at my website.
 I created a forum system there and if you like to join, feel free to send me an email and I will create a login for you so you can post subjects and reply to threads. 
 
-You can find my website in the repository link URL or via 
+You can find my website in the repository link URL or via  
 [https://www.knaapic.nl/atx-286-at-rev4](https://knaapic.nl/atx-286-at-rev4/)  
-The menu "Historic computing" contains dedicated pages for the repository projects.
+The menu "Historic computing" contains dedicated pages for the repository projects.  
 A lot of information is the same as here but some details have been elaborated on my website.
-The forum link is: 
-[https://knaapic.nl/community/](https://knaapic.nl/community/main-forum/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170)
+The forum link is:  
+[https://knaapic.nl/community/](https://knaapic.nl/community/main-forum/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170)  
 
 Thank you for your interest, I look forward to hearing from you!
 
