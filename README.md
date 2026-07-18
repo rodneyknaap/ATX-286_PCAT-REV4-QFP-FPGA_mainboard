@@ -155,7 +155,8 @@ I created a forum system there and if you like to join, feel free to send me an 
 You can find my website in the repository link URL or via  
 [https://www.knaapic.nl/atx-286-at-rev4](https://knaapic.nl/atx-286-at-rev4/)  
 The menu "Historic computing" contains dedicated pages for the repository projects.  
-A lot of information is the same as here but some details have been elaborated on my website.  
+A lot of information will be elaborated more deeply on my website.  
+  
 The forum link is:  
 [https://knaapic.nl/community/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170](https://knaapic.nl/community/main-forum/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170)  
 The forum thread offers more in-depth articles describing the actual process of development of the project.  
@@ -164,6 +165,6 @@ Thank you for your interest, I look forward to hearing from you!
   
 Kind regards,  
   
-Rodney
+Rodney  
 
 Updated last on july 18th, 2026.
