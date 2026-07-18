@@ -158,11 +158,12 @@ The menu "Historic computing" contains dedicated pages for the repository projec
 A lot of information is the same as here but some details have been elaborated on my website.  
 The forum link is:  
 [https://knaapic.nl/community/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170](https://knaapic.nl/community/main-forum/project-to-create-an-atx-80286-mainboard-based-on-the-ibm-5170)  
-
-Thank you for your interest, I look forward to hearing from you!
-
-Kind regards,
-
+The forum thread offers more in-depth articles describing the actual process of development of the project.  
+  
+Thank you for your interest, I look forward to hearing from you!  
+  
+Kind regards,  
+  
 Rodney
 
 Updated last on july 18th, 2026.
