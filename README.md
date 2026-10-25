@@ -142,6 +142,10 @@ https://github.com/polpo/picogus
 ## Debugging work on the REV4 QFP FPGA stage  
 I am going to start development work on the FPGA where the initial goal will be to get the 286 CPU to be able to initialize and show POST diagnostic codes or beep sequences. In addition, status LEDs are available to indicate what the CPU is doing. The POST codes and status LEDs could then possibly provide clues to continue the debugging process. In order to output status information the 286 CPU will need to at least be able to read the ROM and do the necessary I/O reads and writes. There are a lot of factors involved to be able to achieve this level of functionality. To a certain degree the HDL core AT controller equivalents will be needed to provide beep sounds and get the system through the POST sequence far enough that the CPU will be able to initialize the VGA BIOS and start to display on the screen. Part of CPU operations will depend on the existing initially asynchronous system control which may or may not be functional up to certain levels. This aspect of the design will become apparent as soon as I am able to test with the existing designs developed up to the REV3E stage. Hopefully these can function up to a certain level even if only in a very limited way so we may then continue to apply more and more synchronous areas to evolve the system control.  
 
+![Photo of bottom area under the Cyclone II](Cyclone_II_bottom_side_area.jpg)   
+
+Please note in the photo how I soldered the same linear regulator as the main core supply voltage for the PLL, which is a pretty easy process to do after removing a small section of solder mask on the ground place in the area involved.  
+
 ## Update october 25th, 2026  
 Okay so I think I have all the components collected now that I need to build the REV4 QFP mainboard.  
 So I will document the process of building the mainboard here in case anyone wants to build one for themselves.  
