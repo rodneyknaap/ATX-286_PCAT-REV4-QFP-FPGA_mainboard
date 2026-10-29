@@ -169,15 +169,14 @@ I am also developing a variable clock oscillator which we can use to find the cl
 
 Thanks for your interest, and if you like the project, I want to ask you to consider adding a star here which helps me to show me how much interest there generally is for this specific project among the people who come across the repository. This will also influence motivation to continue on with the 80486 which will be up next. There we will choose a suitable 486 CPU which can work well with system that increasingly uses 3.3V. I also have some leftover 3.3V MAX7000 CPLDs which I accidentally ordered from Ebay before, which could also work well in expanding the 486 system IO and various general system functions in our first 80486 design.  
 
-# Update regarding the project blog  
-From july 2026 I will only update write ups on my project blog on my own website and in addition, I will keep updating the readme info on GitHub for the projects from time to time.  
+# Updates regarding the project assembly process can be found on my website  
+On my website you can find a detailed write up of the process of building the REV4 QFP system:  
+[https://www.knaapic.nl/phpBB3/viewtopic.php?p=23#p23](https://knaapic.nl/phpBB3/viewtopic.php?p=23#p23)  
+Please note: in the photos you can see the state of assembly in each phase.  
+Phase 1 is enough to power on and measure all voltages and clocks.  
+And the IO Decoder CPLD can be test programmed as well.  
+Check my post in the link above for a lot more tips, details and photos of how to do the assembly phase 1.  
 
-So anyone who is interested is hereby invited to also take a look at my website. 
-I created a forum system there and if you like to join, feel free to send me an email and I will create a login for you so you can post subjects and reply to threads. 
-
-You can find my website in the repository link URL or via  
-[https://www.knaapic.nl/atx-286-at-rev4](https://knaapic.nl/atx-286-at-rev4/)  
-The menu "Historic computing" contains dedicated pages for the repository projects.  
 A lot of information will be elaborated more deeply on my website, which is not present on the GitHub pages, particularly my visions, experiences and design steps are elaborated there as they were coming up. A lot of additional insider knowledge and know-how can be found on my website. The PC/AT design is not only of importance for the 80286 CPU, but also in maintaining a correct and fully compatible PC/AT standard when transitioning into other CPUs like the 80486 and the Pentium, and onward from there. We can't skip or omit the core controller functions if we want a properly functioning system comperable with the original time period systems. Do note that what I am working on in my projects is to preserve and maintain the original system functions and behaviors, where I intentionally will be fully maintaining all the design aspects as originally created by IBM in the 5170, which was the foundation of all PC systems evolving from there. So we want to maintain the functions, and inherit these into later CPU based systems in the future.  
   
 The forum link is:  
@@ -193,4 +192,4 @@ Kind regards,
   
 Rodney  
 
-Updated last on october 25th, 2026.
+Updated last on october 30th, 2026.
